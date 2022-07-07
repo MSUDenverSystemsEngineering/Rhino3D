@@ -133,7 +133,7 @@ Try {
 		}
 
 		## <Perform Installation tasks here>
-		Execute-Process -Path "bootstrapper.exe" -Parameters "-package -quiet license_method=ZOO ZOO_SERVER=vmwas22 SEND_STATISTICS=0 ENABLE_AUTOMATIC_UPDATES=0 CUSTOMER_NAME=Roadrunner COMPANY_NAME=MSU Denver"
+		Execute-Process -Path "bootstrapper.exe" -Parameters "-package -quiet -norestart license_method=ZOO ZOO_SERVER=vmwas22 SEND_STATISTICS=0 ENABLE_AUTOMATIC_UPDATES=0 CUSTOMER_NAME=Roadrunner COMPANY_NAME=MSU Denver"
 
 		##*===============================================
 		##* POST-INSTALLATION
@@ -173,7 +173,7 @@ Try {
 
 		# <Perform Uninstallation tasks here>
 		#Uninstall Rhinoceros 5 (64-bit)
-		Execute-Process -Path "bootstrapper.exe" -Parameters "-uninstall -quiet"
+		Execute-Process -Path "bootstrapper.exe" -Parameters "-uninstall -quiet -norestart"
 
 		##*===============================================
 		##* POST-UNINSTALLATION
@@ -211,7 +211,7 @@ Try {
 		}
 		## <Perform Repair tasks here>
 
-		Execute-Process -Path "bootstrapper.exe" -Parameters "-repair -quiet license_method=ZOO ZOO_SERVER=vmwas22 SEND_STATISTICS=0 ENABLE_AUTOMATIC_UPDATES=0 CUSTOMER_NAME=Roadrunner COMPANY_NAME=MSU Denver"
+		Execute-Process -Path "bootstrapper.exe" -Parameters "-repair -quiet -norestart license_method=ZOO ZOO_SERVER=vmwas22 SEND_STATISTICS=0 ENABLE_AUTOMATIC_UPDATES=0 CUSTOMER_NAME=Roadrunner COMPANY_NAME=MSU Denver"
 
 		##*===============================================
 		##* POST-REPAIR
@@ -240,8 +240,8 @@ Catch {
 # SIG # Begin signature block
 # MIImVgYJKoZIhvcNAQcCoIImRzCCJkMCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBR82YicfISfzSA
-# XAv+1mJOoE64ACVfXE8h01a4PXK9lKCCH8EwggVvMIIEV6ADAgECAhBI/JO0YFWU
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBwCmNQSycaP2DP
+# iOzUjnh6qpabr7RfxSydOuHHBv/7waCCH8EwggVvMIIEV6ADAgECAhBI/JO0YFWU
 # jTanyYqJ1pQWMA0GCSqGSIb3DQEBDAUAMHsxCzAJBgNVBAYTAkdCMRswGQYDVQQI
 # DBJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcMB1NhbGZvcmQxGjAYBgNVBAoM
 # EUNvbW9kbyBDQSBMaW1pdGVkMSEwHwYDVQQDDBhBQUEgQ2VydGlmaWNhdGUgU2Vy
@@ -415,32 +415,32 @@ Catch {
 # ZDErMCkGA1UEAxMiU2VjdGlnbyBQdWJsaWMgQ29kZSBTaWduaW5nIENBIFIzNgIR
 # AKVN33D73PFMVIK48rFyyjEwDQYJYIZIAWUDBAIBBQCggYQwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAvBgkqhkiG9w0BCQQxIgQgzl2RIKHc9aK+
-# 2EBU/rWwSO1czwSZ1WcNt7Iu9NFrCkcwDQYJKoZIhvcNAQEBBQAEggGAZTlQfGaF
-# xB8vaIWIP6b9zsWZMrt7tqN0VedBr41KXBrIapGpgAVyThj35bKMqNWFV3lEfFYO
-# c6LxoPr0u8qd8UiYwIo8WBpHM65FWoLE/cUT9COSGFRoHhmcmmmUTeAlUIjbG/8z
-# YwNt19npXQHF+ic49NOAaE6lymaYoQcZaNyVhvyj3xKZLPclPiUz32Fjcc+gBtn1
-# tMgrhtocmh0UjsUfeuDb5GmRieV9hTYLcpG2IQ4kocjsgIMf4hFkjHYnwJNoPHoL
-# MzHeO+grKJcphpayJ4WaswoUoYb36It3Pe1erm8QuewRLmImL8f3uFj4U4aBQ8N3
-# MtejGzjsGIoCu0K4ju2IxABb8I9P2OMKAZ/njDQ3/dAyJq88AULufRlT0pS/cnhC
-# 4ye3Orlqcf9kdYBhh0JtBx5Tz0JeHRnxbKtC0/PeFs5+yzhmLSOPRfORxfdMAB7Q
-# +mrSo0NdRQi4VxrhOx/fFbt5U1CIYY7wofxIJhq1ADqRSgt8J6C1F3TToYIDTDCC
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAvBgkqhkiG9w0BCQQxIgQg9AGTTJCCe4yG
+# cDk/fV6tr1lW5y1nHeGMA8krE4HxBZ8wDQYJKoZIhvcNAQEBBQAEggGAQkE0tjrJ
+# 51UTw0/RpLDIqL4alRCkAZDBp8q+UmQKBf4EqI0V2BguGKdcj1jle5N5IfgfUVZh
+# BAREzCE7hm6NH/bxYv9kYRLqWLKuKqTV+mgxO4+eDvTmMPMAeNjz3yDKOQrlyEwf
+# PQeCwDbUFBoFC5qckQXIrronyth8BiCt6ETuZ9Gx7SVlD2zi9uwdqJro7SDgLedF
+# YqkQFwvX1iMlJaM5HssnnuUVa44gbyCBFrr+jKdnddFW5LaIegpIwqKWvHGuebKl
+# a2O4UAbnQI2xDloZNIxdjdvY6w7WsUiqoM1YALXJMTwFSNvWmBvt2rK7AO4/VUYb
+# GfzYNjTEUAFRKYwBGugdF9pESxz7oz/KM3dviS+HsDjhw+lh3VA7gqC0/IfCAd5T
+# a5d4tfodBlHRE9hpCdkt7etJVjPvY2ODSb7JbJdvYrwkp+Vk11VWfqVyJASZJI/r
+# Qr6gfweAo6GaBxtR6lGnCqrJz3phwyoGofuEqxlhFHjh3Yw47+HPwTK6oYIDTDCC
 # A0gGCSqGSIb3DQEJBjGCAzkwggM1AgEBMIGSMH0xCzAJBgNVBAYTAkdCMRswGQYD
 # VQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGDAWBgNV
 # BAoTD1NlY3RpZ28gTGltaXRlZDElMCMGA1UEAxMcU2VjdGlnbyBSU0EgVGltZSBT
 # dGFtcGluZyBDQQIRAJA5f5rSSjoT8r2RXwg4qUMwDQYJYIZIAWUDBAICBQCgeTAY
-# BgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjA2MjIx
-# NzI1NTNaMD8GCSqGSIb3DQEJBDEyBDBV7gDoLmFkQQL7MQZzBIW5BH101eap7D8a
-# zL505pYIMh6vcMtYXdIQHGEXyxZcZJYwDQYJKoZIhvcNAQEBBQAEggIADAHSiBLO
-# 7UezVlRxY/MVXGJ/IR03iS4pa9hfz0IDqgkN39cz+v7cEmFcCWpeQxzt88zqv7XX
-# ojs8szfoSd0eiE2S1ua6fUEm2la+L0BnLtdjX6kEJbHGwqP+J5TBc5UcASBlpHLA
-# 8Ps5Gibd3MJWeQMTkr9JzcvPCtHEHW646XXLU76QjX5nYZeGzr9WaoIvxAK/w3ME
-# +3UaNMMz04NDIt9zdzxmAGTqdGArZqeS+IulUiDZRHy12Eq/nTXtCC4H0mcVwjIq
-# VKWu6q4LTq/Dfo1TFcTRL8eJFpLZydpP1Q5BmRINrKEcTVMTKee+CsgAcIHcRR1T
-# DO8u6DJjRFr9z2uQzSWHTi8r+LQWUA7NRoelo4JOJIi0+K4bifG5mc5xoEP5Qnz2
-# I4dXmq2pO0QZ0Hw5jZwa4mbidGOqd1e4ojimLckqPTET1ZMdb9wwIj/s1X+ntE5z
-# 53opC2HDM+2i4TWKbmEJSvEH3aYwCc4kPf+ofn4wmJ6h1hvUf/OkNusRN+LE1ggN
-# Kq/2vNSrfaEpeI56AexaxrMuwIrfvhgKwUMRIQHu99UALZKXjUzOFzAqJoE12cVu
-# sD2rQbpK29xVyUtlAsUitlSG1JJK+lZ8/FbMUU47CtNDP5NKH6FG3VpXkCIf5drz
-# f++qHBwlWwMmSiMTVR8Csyv+hbuXSZOB5qE=
+# BgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjA3MDcy
+# MTU5NTBaMD8GCSqGSIb3DQEJBDEyBDAZoR5rSqhjL6BAFLbJpAxAoml/SWKCA8Sl
+# 9xudDXEmAEWJlXEyHjxUPhq1BtLsOe4wDQYJKoZIhvcNAQEBBQAEggIAYmuncrfP
+# qsVYDxmtBJlhfE8Boxn982D43VKfUhnkbtg0CCMBS1moMHu4LAgB8kwS0XaX/d2Y
+# lwWBqzWlX6tZE4Mvz+moPcOZlxtrXzgk9dzgU2sOaygJcV/jtHbx2x2ePAadt76N
+# qtoxHa3SSw4VdUVo+jvQHW3ZnrS2Rtb+TTKJsSd9eE1y7CJSuzapPcROhYCb/lr7
+# vmXG/eNf78/IsSwfCMQRcmjE2nQUGvkkKCgJJmW+qUvbkaUq3b39wrFXPfQRAKlO
+# cI/0hKNmtVh+PrNcQljuH1VdnBAK1gSMSmldUJ+G28DX9yXbvssLb2KWar+fjr7K
+# BN8OJgABU2EJI2/xcVbZFtjf6cAjCNGaxsXb2cItcd3eF35ANro/7STqMrNUWPAM
+# tAEkkwPaBnhoZvfkIYEPqNjaO8ZIDrwW/ZqL4EH4XxmzmdtcjtMiC7SU7kePOSU/
+# frFyNb0hLumT+FT9Y3a7X9K5W7mz5BnfgjUIqFsM4Tbh5T3BXPJVoDcL0SesGLnU
+# avSzGw0vs36CWR8OAOKGkecijHZeQ3is0GjWoyvIcvgP6Dxsaz2kEVwquAsnY+Xh
+# AXTt5UiGRA6N3sDNYB7JHGD0A9bD19uzYp+l+NRk2ica7eJjhqGyQWcrXDOmkfix
+# F+s1gPoQH3dXD2qDyELHzzqpWPHxYKNfozM=
 # SIG # End signature block
