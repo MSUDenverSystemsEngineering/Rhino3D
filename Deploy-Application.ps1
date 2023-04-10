@@ -60,13 +60,13 @@ Try {
 	## Variables: Application
 	[string]$appVendor = ''
 	[string]$appName = 'Rhinoceros'
-	[string]$appVersion = '7'
+	[string]$appVersion = '7.28'
 	[string]$appArch = 'x64'
 	[string]$appLang = 'EN'
 	[string]$appRevision = '01'
 	[string]$appScriptVersion = '1.0.0'
-	[string]$appScriptDate = '06/13/2022'
-	[string]$appScriptAuthor = 'Ryan McKenna'
+	[string]$appScriptDate = '04/10/2023'
+	[string]$appScriptAuthor = 'Will Jarvill'
 	##*===============================================
 	## Variables: Install Titles (Only set here to override defaults set by the toolkit)
 	[string]$installName = ''
@@ -133,7 +133,7 @@ Try {
 		}
 
 		## <Perform Installation tasks here>
-		Execute-Process -Path "bootstrapper.exe" -Parameters "-package -quiet -norestart license_method=ZOO ZOO_SERVER=vmwas22 SEND_STATISTICS=0 ENABLE_AUTOMATIC_UPDATES=0 CUSTOMER_NAME=Roadrunner COMPANY_NAME=MSU Denver"
+		Execute-Process -Path "rhino_en-us_7.28.23058.03001.exe" -Parameters "-package -quiet -norestart license_method=ZOO ZOO_SERVER=vmwas22 SEND_STATISTICS=0 ENABLE_AUTOMATIC_UPDATES=0 CUSTOMER_NAME=Roadrunner COMPANY_NAME=MSU Denver"
 
 		##*===============================================
 		##* POST-INSTALLATION
@@ -173,7 +173,7 @@ Try {
 
 		# <Perform Uninstallation tasks here>
 		#Uninstall Rhinoceros 5 (64-bit)
-		Execute-Process -Path "bootstrapper.exe" -Parameters "-uninstall -quiet -norestart"
+		Execute-Process -Path "rhino_en-us_7.28.23058.03001.exe" -Parameters "-uninstall -quiet -norestart"
 
 		##*===============================================
 		##* POST-UNINSTALLATION
@@ -211,7 +211,7 @@ Try {
 		}
 		## <Perform Repair tasks here>
 
-		Execute-Process -Path "bootstrapper.exe" -Parameters "-repair -quiet -norestart license_method=ZOO ZOO_SERVER=vmwas22 SEND_STATISTICS=0 ENABLE_AUTOMATIC_UPDATES=0 CUSTOMER_NAME=Roadrunner COMPANY_NAME=MSU Denver"
+		Execute-Process -Path "rhino_en-us_7.28.23058.03001.exe" -Parameters "-repair -quiet -norestart license_method=ZOO ZOO_SERVER=vmwas22 SEND_STATISTICS=0 ENABLE_AUTOMATIC_UPDATES=0 CUSTOMER_NAME=Roadrunner COMPANY_NAME=MSU Denver"
 
 		##*===============================================
 		##* POST-REPAIR
@@ -240,8 +240,8 @@ Catch {
 # SIG # Begin signature block
 # MIImVgYJKoZIhvcNAQcCoIImRzCCJkMCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBwCmNQSycaP2DP
-# iOzUjnh6qpabr7RfxSydOuHHBv/7waCCH8EwggVvMIIEV6ADAgECAhBI/JO0YFWU
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCAY+0eCCGjdbMBL
+# Df1XS2rc5yWm+f1DI81KaFsUmkzrY6CCH8EwggVvMIIEV6ADAgECAhBI/JO0YFWU
 # jTanyYqJ1pQWMA0GCSqGSIb3DQEBDAUAMHsxCzAJBgNVBAYTAkdCMRswGQYDVQQI
 # DBJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcMB1NhbGZvcmQxGjAYBgNVBAoM
 # EUNvbW9kbyBDQSBMaW1pdGVkMSEwHwYDVQQDDBhBQUEgQ2VydGlmaWNhdGUgU2Vy
@@ -415,32 +415,32 @@ Catch {
 # ZDErMCkGA1UEAxMiU2VjdGlnbyBQdWJsaWMgQ29kZSBTaWduaW5nIENBIFIzNgIR
 # AKVN33D73PFMVIK48rFyyjEwDQYJYIZIAWUDBAIBBQCggYQwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAvBgkqhkiG9w0BCQQxIgQg9AGTTJCCe4yG
-# cDk/fV6tr1lW5y1nHeGMA8krE4HxBZ8wDQYJKoZIhvcNAQEBBQAEggGAQkE0tjrJ
-# 51UTw0/RpLDIqL4alRCkAZDBp8q+UmQKBf4EqI0V2BguGKdcj1jle5N5IfgfUVZh
-# BAREzCE7hm6NH/bxYv9kYRLqWLKuKqTV+mgxO4+eDvTmMPMAeNjz3yDKOQrlyEwf
-# PQeCwDbUFBoFC5qckQXIrronyth8BiCt6ETuZ9Gx7SVlD2zi9uwdqJro7SDgLedF
-# YqkQFwvX1iMlJaM5HssnnuUVa44gbyCBFrr+jKdnddFW5LaIegpIwqKWvHGuebKl
-# a2O4UAbnQI2xDloZNIxdjdvY6w7WsUiqoM1YALXJMTwFSNvWmBvt2rK7AO4/VUYb
-# GfzYNjTEUAFRKYwBGugdF9pESxz7oz/KM3dviS+HsDjhw+lh3VA7gqC0/IfCAd5T
-# a5d4tfodBlHRE9hpCdkt7etJVjPvY2ODSb7JbJdvYrwkp+Vk11VWfqVyJASZJI/r
-# Qr6gfweAo6GaBxtR6lGnCqrJz3phwyoGofuEqxlhFHjh3Yw47+HPwTK6oYIDTDCC
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAvBgkqhkiG9w0BCQQxIgQgRhP3lZaZCuUj
+# izvr0sT67txGdn1rFJuEEAnMYupq5p8wDQYJKoZIhvcNAQEBBQAEggGAW13s7Ka1
+# nQBQwLoAarPb47LEP39E0zjLKe4OhA8nbNZtWMfsM02Df9plH94oEDyV51cqVnZO
+# nRa5xJLXOHNyzvPLrwFZZCkbvNwkcZCY/vAuat5x4ZeY4g0+dTAbknXbAmy8DoDR
+# uuISOMU2BcOyKImG7xIYYYbwbagfN4/jujXeYGcIpqHvDxi/GWqwCQA516vR6d8Y
+# wut92Mi0agoyjUbJzcAObiEs7PJQiy9lDtdSog/fSvDgFJfb8Dy7smnX1pvEnNWl
+# N3vCY+8HAghz/Ul8nqn4e5bAcVWVB9bzWWtHVUXu20lYkXK63JmH/U9Fgj5C2oHB
+# 2tDH1zsGQSrGbfnayJAmPcIU0XvgP/Q01+zjQu+J8y+jTkGh5rkHopGKMigm5er4
+# yuJLPUUCQzMs6pSgoddVq3F+Y0GDTz5/l0abUm59x1jbT6pAodEmBxKY5RjKQhiN
+# IuaqOwvFT+VUTU4FM+6x45IX1WKokskREKTOmPLZqyvDIKBPUQxbn5dtoYIDTDCC
 # A0gGCSqGSIb3DQEJBjGCAzkwggM1AgEBMIGSMH0xCzAJBgNVBAYTAkdCMRswGQYD
 # VQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGDAWBgNV
 # BAoTD1NlY3RpZ28gTGltaXRlZDElMCMGA1UEAxMcU2VjdGlnbyBSU0EgVGltZSBT
 # dGFtcGluZyBDQQIRAJA5f5rSSjoT8r2RXwg4qUMwDQYJYIZIAWUDBAICBQCgeTAY
-# BgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjA3MDcy
-# MTU5NTBaMD8GCSqGSIb3DQEJBDEyBDAZoR5rSqhjL6BAFLbJpAxAoml/SWKCA8Sl
-# 9xudDXEmAEWJlXEyHjxUPhq1BtLsOe4wDQYJKoZIhvcNAQEBBQAEggIAYmuncrfP
-# qsVYDxmtBJlhfE8Boxn982D43VKfUhnkbtg0CCMBS1moMHu4LAgB8kwS0XaX/d2Y
-# lwWBqzWlX6tZE4Mvz+moPcOZlxtrXzgk9dzgU2sOaygJcV/jtHbx2x2ePAadt76N
-# qtoxHa3SSw4VdUVo+jvQHW3ZnrS2Rtb+TTKJsSd9eE1y7CJSuzapPcROhYCb/lr7
-# vmXG/eNf78/IsSwfCMQRcmjE2nQUGvkkKCgJJmW+qUvbkaUq3b39wrFXPfQRAKlO
-# cI/0hKNmtVh+PrNcQljuH1VdnBAK1gSMSmldUJ+G28DX9yXbvssLb2KWar+fjr7K
-# BN8OJgABU2EJI2/xcVbZFtjf6cAjCNGaxsXb2cItcd3eF35ANro/7STqMrNUWPAM
-# tAEkkwPaBnhoZvfkIYEPqNjaO8ZIDrwW/ZqL4EH4XxmzmdtcjtMiC7SU7kePOSU/
-# frFyNb0hLumT+FT9Y3a7X9K5W7mz5BnfgjUIqFsM4Tbh5T3BXPJVoDcL0SesGLnU
-# avSzGw0vs36CWR8OAOKGkecijHZeQ3is0GjWoyvIcvgP6Dxsaz2kEVwquAsnY+Xh
-# AXTt5UiGRA6N3sDNYB7JHGD0A9bD19uzYp+l+NRk2ica7eJjhqGyQWcrXDOmkfix
-# F+s1gPoQH3dXD2qDyELHzzqpWPHxYKNfozM=
+# BgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMzA0MTAx
+# NDU3NTZaMD8GCSqGSIb3DQEJBDEyBDCFZuPYa4DaM4cXOyvNKdioiBdyS4xIP7e/
+# 3nhzaBMUzCF8WnRdRQYmEYNsrzPfMB0wDQYJKoZIhvcNAQEBBQAEggIAM882xuNO
+# 5a9aYVapOOic58DaJEsjbxQ7YOCC+Za6opmkD5uDBON/iGismo8kdgBZHS5mNJ0G
+# X0niKqJknIr+bBsH/+NSp0hwDbt4dtU3ZuDFhB+YOQwLPPuzDeXOWy/gsWMvdYIR
+# Ll4lQgwgE1Zbr23tYZ02trPuRq4TgCyjpGgXCewl6dcdJjKFSiVsUD4ioT7r2hO3
+# BQU836wQbr/r+Q7M2UmSFcTyNkXzv9XIUNl77PvdDvcmEvoiSUOKKbN5cL2cnwVW
+# U3mhOEm7VaNausv5k0g6yPdD8GpJWY9B+nnd1ch9/npmgFMQw4SM0L0b343OxtPt
+# SGLeBjM2Wub+eGNUUzO9pYuEXG6lwn74RjhKYftxFmZzSRNFgj7iDjEI/vc6w9DK
+# w0PLlX6TprTd4m5mbDR0xzhLDsVsofjS+e0h4mzjEntAbbgH99e4HLJDZkhTioE6
+# IwyDn+zzYJEaFIxAPUtSI91CFR136pDJaIQbQBps4thP4tVG2t2fsy0YYC0infth
+# DE/gfRyBc2doMn5iz6kok8CGYbJy3wVhXryqWJ33Ev84ueO/qoct8/cUApufbY7y
+# QGjG48mG3TBLXscvkKze6qTbQduyRjJS7+1akqppi4Q3zwIDji3TY+jrvPu7JhuS
+# gz/nN6q7YjOj2RrbZEBKkATG2OvIxEnTut0=
 # SIG # End signature block
